@@ -9,15 +9,29 @@ class StateProviderView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       body: Center(
-        child: Consumer(
-          builder: (_, ref, __) {
-            final _counter = ref.watch(quantity);
-            return Text(_counter.toString());
-          },
+        child: Column(
+          children: [
+            Consumer(
+              builder: (_, ref, __) {
+                final _ref =
+                    ref.watch(quantity.select((value) => value.quantity));
+                return Text(_ref.toString());
+              },
+            ),
+            Consumer(builder: (_, ref, __) {
+              final _ref =
+                  ref.watch(quantity.select((value) => value.quantity2));
+              return Text(_ref.toString());
+            })
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(onPressed: () {
-        ref.read(quantity.state).state++;
+        final _state = ref.read(quantity.state);
+        _state.state =
+            _state.state.copyWith(quantity: _state.state.quantity + 1);
+        _state.state =
+            _state.state.copyWith(quantity: _state.state.quantity2 + 1);
       }),
     );
   }
