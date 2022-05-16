@@ -12,6 +12,6 @@ class TestObj {
     int? quantity,
     int? quantity2,
   }) {
-    return TestObj(quantity ?? this.quantity,quantity2 ??this.quantity2);
+    return TestObj(quantity ?? this.quantity , quantity2 ??this.quantity2);
   }
 }
