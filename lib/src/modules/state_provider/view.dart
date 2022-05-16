@@ -29,11 +29,11 @@ class StateProviderView extends ConsumerWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(onPressed: () {
-        // final _state = ref.read(quantity.state);
-        // _state.state = _state.state.copyWith(quantity: _state.state.quantity + 1);
-        // _state.state = _state.state.copyWith(quantity2: _state.state.quantity2 + 1);
+        final _state = ref.read(quantity.state);
+        _state.state = _state.state.copyWith(quantity: _state.state.quantity + 1);
+        _state.state = _state.state.copyWith(quantity2: _state.state.quantity2 + 1);
         
-        //final _state = ref.read(quantity.state).state.copyWith(quantity: )
+        
         
       }),
     );
