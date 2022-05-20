@@ -9,7 +9,7 @@ class ProviderView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      body: Center(
+      body: Center( 
         child: Consumer(
           builder: (_, ref, __) {
             return Text(ref.watch(providerV('Riverpod Demo Title')).toString() );
