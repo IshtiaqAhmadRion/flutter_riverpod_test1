@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod_test1/src/modules/state_provider/state_provider.dart';
 
-final providerV = Provider.family<Map<String, String>,String>((ref,title) {
+final providerV = Provider.family.autoDispose<Map<String, String>,String>((ref,title) {
   final _quantity = ref.watch(quantity);
 
   final _data = {
