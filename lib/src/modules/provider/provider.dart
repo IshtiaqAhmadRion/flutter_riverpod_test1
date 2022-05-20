@@ -5,7 +5,7 @@ final providerV = Provider.family<Map<String, String>,String>((ref,title) {
   final _quantity = ref.watch(quantity);
 
   final _data = {
-    'title': title,
+    'title': title ,
     'description': 'sdlfkjsdjfljfjdfkjasdljfslajdflj',
     'author': 'Flutter community',
     'homepage': '',
